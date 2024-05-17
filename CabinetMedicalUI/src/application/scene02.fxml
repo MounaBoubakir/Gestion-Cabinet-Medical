@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene02Controller">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="119.0" layoutY="178.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="200.0" styleClass="semi-top-form" stylesheets="@dashbord.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="-77.0" prefHeight="600.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="13.0" text="Gestion de Cabinet Medical">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="close_btm" layoutX="1053.0" layoutY="9.0" mnemonicParsing="false" onAction="#close" text="Close" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="571.0" prefWidth="221.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="11.0" layoutY="162.0" prefHeight="554.6666666666666" prefWidth="221.33333333333334" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="30.0" layoutY="31.0" text="Welcome" textFill="#f6f0f0">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="36.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="112.0" layoutY="110.0" startX="-100.0" stroke="WHITE" />
+                              <Button fx:id="dashbord_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="151.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="189.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Dashbord" textAlignment="CENTER" />
+                              <Button fx:id="Doctors_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="186.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="189.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Doctors Management" textAlignment="CENTER" />
+                              <Button fx:id="patients_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="189.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Patients Management" textAlignment="CENTER" />
+                              <Button fx:id="appointments_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="201.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Appointments Management" textAlignment="CENTER" />
+                              <Button fx:id="record_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="411.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Medical Record Management" textAlignment="CENTER" />
+                              <Button layoutX="20.0" layoutY="508.0" mnemonicParsing="false" styleClass="logout-btn" stylesheets="@dashbord.css" text="Return" />
+                              <Button fx:id="record_btm1" contentDisplay="CENTER" layoutX="12.0" layoutY="365.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Medical File Management " textAlignment="CENTER" />
+                              <Button fx:id="Consul_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Consultation management" textAlignment="CENTER" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="medcin_form" layoutX="14.0" layoutY="14.0" onDragDetected="#switchForm" prefHeight="233.0" prefWidth="847.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="22.0" layoutY="22.0" text="Nom Medecin:" />
+                              <TextField fx:id="addmedcin_nom" layoutX="113.0" layoutY="18.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="22.0" layoutY="99.0" text="ID medecin:" />
+                              <TextField fx:id="addmedcin_Id" layoutX="113.0" layoutY="95.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="24.0" layoutY="169.0" text="Specialitee:" />
+                              <TextField fx:id="addmedecin_spec" layoutX="113.0" layoutY="165.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="509.0" layoutY="22.0" text="Fonctionalitee:" />
+                              <ComboBox fx:id="addmedecin_fonc" layoutX="483.0" layoutY="43.0" onAction="#handleCheckBox" prefWidth="150.0" promptText="              Choose" styleClass="textfield" stylesheets="@dashbord.css" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="tablemedc_form" layoutX="15.0" layoutY="263.0" onDragDetected="#switchForm" prefHeight="278.0" prefWidth="847.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="tableView" layoutX="13.0" layoutY="11.0" prefHeight="255.0" prefWidth="821.0" stylesheets="@dashbord.css">
+                                <columns>
+                                  <TableColumn fx:id="addmedtable_nommed" prefWidth="220.66673851013184" text="Nom Medcin:" />
+                                  <TableColumn fx:id="addmedtable_idmed" prefWidth="127.99992370605469" text="ID medecin:" />
+                                    <TableColumn fx:id="addmedtable_specmed" prefWidth="468.0000305175781" text="Specialitee:" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="patient_form" layoutX="16.0" layoutY="22.0" prefHeight="200.0" prefWidth="842.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="26.0" layoutY="22.0" text="Nom:" />
+                              <Label layoutX="27.0" layoutY="68.0" text="Prenom" />
+                              <Label layoutX="159.0" layoutY="133.0" text="ID" />
+                              <Label layoutX="270.0" layoutY="22.0" text="Telephone" />
+                              <Label layoutX="284.0" layoutY="68.0" text="Adresse" />
+                              <Label layoutX="618.0" layoutY="68.0" text="Fonctionalitee" />
+                              <TextField fx:id="addpatient_nom" layoutX="69.0" layoutY="18.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="addpatient_prenom" layoutX="69.0" layoutY="64.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="addpatient_id" layoutX="185.0" layoutY="127.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="addpatient_teleph" layoutX="332.0" layoutY="18.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="addpatient_adre" layoutX="332.0" layoutY="64.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <ComboBox fx:id="addpatient_fonctio" layoutX="556.0" layoutY="56.0" onAction="#handleCheckBox2" prefWidth="150.0" promptText="              Choose" styleClass="textfield" stylesheets="@dashbord.css" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="patienttable_form" layoutX="18.0" layoutY="247.0" prefHeight="259.0" prefWidth="842.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="patientTableView" layoutX="14.0" layoutY="14.0" prefHeight="235.0" prefWidth="814.0">
+                                <columns>
+                                  <TableColumn fx:id="pattable_nom" prefWidth="130.6666603088379" text="Nom:" />
+                                  <TableColumn fx:id="pattable_prenom" prefWidth="146.6666717529297" text="Prenom:" />
+                                    <TableColumn fx:id="pattable_id" prefWidth="69.33331298828125" text="ID:" />
+                                    <TableColumn fx:id="pattable_teleph" prefWidth="205.33334350585938" text="Telephone:" />
+                                    <TableColumn fx:id="pattabe_adr" minWidth="0.0" prefWidth="262.66656494140625" text="Adresse:" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="16.0" layoutY="14.0" prefHeight="222.0" prefWidth="841.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane layoutX="19.0" layoutY="247.0" prefHeight="294.0" prefWidth="844.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane layoutX="130.0" layoutY="147.0" prefHeight="554.6666666666666" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <AnchorPane fx:id="appointment_form" layoutX="606.0" layoutY="2.0" prefHeight="549.0" prefWidth="268.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="14.0" layoutY="25.0" text="Fonctionalitee" />
+                              <ComboBox fx:id="rendezvousbox" layoutX="104.0" layoutY="21.0" onAction="#handleRendezVousAction" prefWidth="150.0" promptText="choose" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="14.0" layoutY="91.0" text="Doctor ID" />
+                              <TextField fx:id="rendezdoctorid" layoutX="98.0" layoutY="87.0" promptText="id" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="14.0" layoutY="219.0" text="Patient ID" />
+                              <TextField fx:id="rendezpatientid" layoutX="104.0" layoutY="215.0" promptText="id" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="14.0" layoutY="158.0" text="Status" />
+                              <ComboBox fx:id="statusdoctor" layoutX="127.0" layoutY="154.0" prefHeight="25.0" prefWidth="103.0" promptText="Avalibility" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="79.0" layoutY="266.0" text="Date de rendez vous" />
+                              <DatePicker fx:id="rendezdate" layoutX="59.0" layoutY="295.0" promptText="choose ur date " styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="114.0" layoutY="339.0" text="Time" />
+                              <TextField fx:id="rendeztime" layoutX="59.0" layoutY="356.0" promptText="time" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="66.0" layoutY="399.0" text="Reason de rendez vous" />
+                              <TextField fx:id="rendezreason" layoutX="59.0" layoutY="416.0" prefHeight="123.0" prefWidth="160.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="rendezvoustable" layoutX="18.0" layoutY="14.0" prefHeight="531.0" prefWidth="569.0" stylesheets="@dashbord.css" visible="false">
+                          <columns>
+                            <TableColumn fx:id="daterendez" prefWidth="75.0" text="Date" />
+                            <TableColumn fx:id="timerendez" prefWidth="75.0" text="Time" />
+                              <TableColumn fx:id="doctrendez" prefWidth="75.0" text="Doctor ID" />
+                              <TableColumn fx:id="statusrendez" prefWidth="75.0" text="Status" />
+                              <TableColumn fx:id="patrendez" prefWidth="75.0" text="Patient id" />
+                              <TableColumn fx:id="reasonrendez" prefWidth="190.00003051757812" text="reason" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane fx:id="consultation_form" layoutX="19.0" layoutY="14.0" prefHeight="233.0" prefWidth="852.0" stylesheets="@dashbord.css" visible="false">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="38.0" layoutY="22.0" text="Doctor ID" />
+                              <Label layoutX="201.0" layoutY="22.0" text="Symptoms" />
+                              <Label layoutX="188.0" layoutY="95.0" text="Medical History" />
+                              <Label layoutX="495.0" layoutY="30.0" text="Diagnosis" />
+                              <Label layoutX="483.0" layoutY="103.0" text="Prescription" />
+                              <Label layoutX="38.0" layoutY="95.0" text="Patient ID" />
+                              <Label layoutX="401.0" layoutY="172.0" text="Fonctionalitee" />
+                              <TextField fx:id="doctorconsul" layoutX="104.0" layoutY="18.0" prefHeight="25.0" prefWidth="55.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="patientconsul" layoutX="104.0" layoutY="91.0" prefHeight="25.0" prefWidth="53.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="symptoms" layoutX="276.0" layoutY="18.0" prefHeight="62.0" prefWidth="173.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="antecedent" layoutX="276.0" layoutY="95.0" prefHeight="62.0" prefWidth="175.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="prescriptionconsul" layoutX="557.0" layoutY="95.0" prefHeight="62.0" prefWidth="175.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <TextField fx:id="diagno" layoutX="557.0" layoutY="18.0" prefHeight="62.0" prefWidth="175.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <ComboBox fx:id="consulfonction" layoutX="515.0" layoutY="168.0" onAction="#handleConsultationAction" prefWidth="150.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                              <Label layoutX="16.0" layoutY="181.0" text="Consultation Date" />
+                              <DatePicker fx:id="dateconsul" layoutX="127.0" layoutY="177.0" prefHeight="21.0" prefWidth="122.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="consultation_tab" layoutX="19.0" layoutY="263.0" prefHeight="277.0" prefWidth="843.0" stylesheets="@dashbord.css" visible="false">
+                          <columns>
+                            <TableColumn fx:id="doctorconsultab" prefWidth="70.00001335144043" text="Doctor ID" />
+                            <TableColumn fx:id="paticonsultab" prefWidth="75.33332061767578" text="Patient ID" />
+                              <TableColumn fx:id="symptab" prefWidth="154.66673278808594" text="Symptoms" />
+                              <TableColumn fx:id="antecetab" prefWidth="124.6666259765625" text="Medical History" />
+                              <TableColumn fx:id="diagtab" prefWidth="150.66671752929688" text="Diagnosis" />
+                              <TableColumn fx:id="prescriptab" minWidth="0.0" prefWidth="174.0" text="Prescription" />
+                              <TableColumn fx:id="tabconsuldate" minWidth="0.0" prefWidth="91.99993896484375" text="Date " />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+            <Line endX="100.0" startX="-100.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

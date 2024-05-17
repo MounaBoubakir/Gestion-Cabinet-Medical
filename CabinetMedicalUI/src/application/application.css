@@ -1,0 +1,46 @@
+/* JavaFX CSS for Scene01 */
+#scene01 {
+    -fx-background-color: linear-gradient(to top, #3498db, #8e44ad); /* Updated gradient direction */
+}
+
+/* Styling for the main title label */
+#titleLabel {
+    -fx-font-size: 36px; /* Larger font size for title */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 3); /* Shadow for depth */
+}
+
+/* Styling for labels */
+.label {
+    -fx-font-size: 18px; /* Increased font size for readability */
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2); /* Soft shadow for text */
+}
+
+/* Styling for text fields and password fields */
+.text-field, .password-field {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-background-radius: 5; /* Rounded corners */
+    -fx-border-color: #3498db; /* Border to match the theme */
+    -fx-border-radius: 5; /* Rounded borders */
+    -fx-padding: 5; /* Padding for text inside fields */
+    -fx-text-fill: #3498db; /* Theme color for text */
+}
+
+/* Styling for buttons */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #3498db, #2980b9); /* Smooth blue gradient */
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-font-size: 16px;
+    -fx-border-color: #ffffff; /* White border */
+    -fx-border-width: 2; /* Border width */
+    -fx-background-radius: 20; /* Rounded background */
+    -fx-border-radius: 20; /* Rounded borders */
+    -fx-padding: 10 20; /* Padding for larger touch area */
+}
+
+/* Styling for image views (if needed) */
+#usthbimage {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 3); /* Shadow for depth */
+}
