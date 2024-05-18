@@ -21,7 +21,7 @@ public class Consultation {
         this.consultationDate = consultationDate;
     }
 
-    // Getters and setters
+    // Getters et setters
     public int getDoctorId() { return doctorId; }
     public void setDoctorId(int doctorId) { this.doctorId = doctorId; }
 

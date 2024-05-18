@@ -3,7 +3,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 public class Medecin {
-    private SimpleStringProperty nom;
+    private SimpleStringProperty nom;// ici jai ajouter ca SimpleStringProperty pour eviter les erreur de l interface et l'attacher a elle directement
     private SimpleStringProperty specialite;
     private SimpleIntegerProperty id;
   

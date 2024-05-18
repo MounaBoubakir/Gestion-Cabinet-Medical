@@ -50,9 +50,9 @@
                               <Button fx:id="Doctors_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="186.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="189.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Doctors Management" textAlignment="CENTER" />
                               <Button fx:id="patients_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="189.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Patients Management" textAlignment="CENTER" />
                               <Button fx:id="appointments_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="201.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Appointments Management" textAlignment="CENTER" />
-                              <Button fx:id="record_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="411.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Medical Record Management" textAlignment="CENTER" />
-                              <Button layoutX="20.0" layoutY="508.0" mnemonicParsing="false" styleClass="logout-btn" stylesheets="@dashbord.css" text="Return" />
-                              <Button fx:id="record_btm1" contentDisplay="CENTER" layoutX="12.0" layoutY="365.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Medical File Management " textAlignment="CENTER" />
+                              <Button fx:id="Dossier_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="411.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Medical Record Management" textAlignment="CENTER" />
+                              <Button fx:id="returnButton" layoutX="20.0" layoutY="508.0" mnemonicParsing="false" onAction="#switchToScene1" styleClass="logout-btn" stylesheets="@dashbord.css" text="Return" />
+                              <Button fx:id="fichier_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="365.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Medical File Management " textAlignment="CENTER" />
                               <Button fx:id="Consul_btm" contentDisplay="CENTER" layoutX="12.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="211.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Consultation management" textAlignment="CENTER" />
                            </children>
                         </AnchorPane>
@@ -210,6 +210,56 @@
                               <TableColumn fx:id="tabconsuldate" minWidth="0.0" prefWidth="91.99993896484375" text="Date " />
                           </columns>
                         </TableView>
+                        <AnchorPane fx:id="fichier_form" layoutX="565.0" layoutY="13.0" prefHeight="533.0" prefWidth="273.0" stylesheets="@dashbord.css" visible="false">
+                           <children>
+                              <TextField fx:id="nameField" layoutX="51.0" layoutY="58.0" prefHeight="25.0" prefWidth="107.0" promptText="nom du patient" />
+                              <TextField fx:id="surnameField" layoutX="179.0" layoutY="58.0" prefHeight="25.0" prefWidth="109.0" promptText="prenom du patient" />
+                              <TextField fx:id="weightField" layoutX="178.0" layoutY="125.0" prefHeight="25.0" prefWidth="111.0" promptText="Poids" />
+                              <TextField fx:id="ageField" layoutX="48.0" layoutY="125.0" prefHeight="25.0" prefWidth="109.0" promptText="Age" />
+                              <TextField fx:id="medicalHistoryField" layoutX="177.0" layoutY="181.0" prefHeight="25.0" prefWidth="114.0" promptText="medicalHistory" />
+                              <TextField fx:id="heightField" layoutX="48.0" layoutY="181.0" prefHeight="25.0" prefWidth="109.0" promptText="height" />
+                              <TextField fx:id="allergiesField" layoutX="173.0" layoutY="231.0" prefHeight="25.0" prefWidth="116.0" promptText="allergies" />
+                              <TextField fx:id="surgicalHistoryField" layoutX="47.0" layoutY="231.0" prefHeight="25.0" prefWidth="111.0" promptText="surgicalHistory" />
+                              <TextField fx:id="idFichierField" layoutX="94.0" layoutY="291.0" prefHeight="25.0" prefWidth="115.0" promptText="ID" />
+                              <ComboBox fx:id="fichierFonction" layoutX="77.0" layoutY="384.0" onAction="#handleFichierAction" prefWidth="150.0" promptText="fonctinalitee" stylesheets="@dashbord.css" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="fichierTable" layoutX="2.0" layoutY="4.0" prefHeight="536.0" prefWidth="601.0" stylesheets="@dashbord.css" visible="false">
+                          <columns>
+                            <TableColumn fx:id="nomfich" prefWidth="56.000001430511475" text="nom" />
+                            <TableColumn fx:id="prenomfich" prefWidth="61.999996185302734" text="prenom" />
+                              <TableColumn fx:id="agefich" prefWidth="50.66669464111328" text="age" />
+                              <TableColumn fx:id="poidfich" prefWidth="57.33331298828125" text="poid" />
+                              <TableColumn fx:id="hautfich" prefWidth="55.33338928222656" text="hauteur" />
+                              <TableColumn fx:id="medichifich" prefWidth="105.3333740234375" text="Medical history" />
+                              <TableColumn fx:id="surgicfich" prefWidth="95.3333740234375" text="SurgicalHistory" />
+                              <TableColumn fx:id="allergiefich" prefWidth="58.000030517578125" text="Allergies" />
+                              <TableColumn fx:id="idfich" prefWidth="58.000030517578125" text="ID" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="dossierTableView" layoutX="8.0" layoutY="270.0" prefHeight="269.0" prefWidth="845.0" visible="false">
+                          <columns>
+                            <TableColumn fx:id="patientNameColumn" prefWidth="88.00002765655518" text="Nom Patient" />
+                            <TableColumn fx:id="patientSurnameColumn" prefWidth="102.66663360595703" text="Prenom Patient" />
+                              <TableColumn fx:id="doctorNameColumn" prefWidth="90.66670227050781" text="Nom Medecin" />
+                              <TableColumn fx:id="medicationColumn" prefWidth="149.33331298828125" text="Medicaments" />
+                              <TableColumn fx:id="doseColumn" prefWidth="104.66665649414062" text="Dose" />
+                              <TableColumn fx:id="durationColumn" prefWidth="138.66668701171875" text="Duree" />
+                              <TableColumn fx:id="summaryColumn" prefWidth="177.99993896484375" text="Resumee" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane fx:id="dossier_form" layoutX="14.0" layoutY="13.0" prefHeight="239.0" prefWidth="835.0" visible="false">
+                           <children>
+                              <TextField fx:id="patientNameField" layoutX="23.0" layoutY="14.0" promptText="Nom patient" />
+                              <TextField fx:id="patientSurnameField" layoutX="23.0" layoutY="75.0" promptText="Prenom patient" />
+                              <TextField fx:id="doctorNameField" layoutX="23.0" layoutY="135.0" promptText="nom medecin" />
+                              <TextField fx:id="medicationField" layoutX="194.0" layoutY="14.0" promptText="Medicamments" />
+                              <TextField fx:id="doseField" layoutX="200.0" layoutY="75.0" promptText="dose" />
+                              <TextField fx:id="durationField" layoutX="200.0" layoutY="135.0" promptText="duree" />
+                              <TextField fx:id="summaryField" layoutX="395.0" layoutY="24.0" prefHeight="129.0" prefWidth="171.0" promptText="resumee" />
+                              <ComboBox fx:id="dossierFunctionComboBox" layoutX="619.0" layoutY="26.0" prefWidth="150.0" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                </center>

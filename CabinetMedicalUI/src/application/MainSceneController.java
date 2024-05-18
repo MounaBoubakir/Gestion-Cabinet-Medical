@@ -30,15 +30,15 @@ public class MainSceneController {
     private void handleLogin(ActionEvent event) throws IOException {
         String enteredEmail = emailField.getText();
         String enteredPassword = passwordField.getText();
-        String correctEmail = "student@usthb.com"; // Change this to your actual correct email
-        String correctPassword = "usthb"; // Change this to your actual correct password
+        String correctEmail = "student@usthb.com"; 
+        String correctPassword = "usthb"; 
 
         if (enteredEmail.equals(correctEmail) && enteredPassword.equals(correctPassword)) {
-            // Email and password are correct, switch to Scene02
+           //si email est vrai donc we switch to second scene 
             switchToScene2(event);
         } else {
-            // Incorrect email or password, display an error message or take appropriate action
-            showAlert("Error", "Incorrect email or password. Please try again.");
+            // message d'erreur si email est faux
+            showAlert("Error", "Email ou mot de passe incorrect, Essayee une autre fois.");
         }
     }
 

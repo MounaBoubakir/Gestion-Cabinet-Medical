@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import javafx.beans.property.*;
 
 public class RendezVous {
+	//ici jai utilisee ObjectProperty pour que je fait la lisaison avec javafx sans ls erreurs que javais avant
     private ObjectProperty<Medecin> doctor;
     private ObjectProperty<Patient> patient;
     private ObjectProperty<LocalDate> date;
@@ -22,7 +23,7 @@ public class RendezVous {
     }
 
    
-	// Getters and setters for all properties
+	// Getters et setters
     public Medecin getDoctor() {
         return doctor.get();
     }
@@ -71,7 +72,7 @@ public class RendezVous {
         this.reason.set(reason);
     }
 
-    // Property methods for binding
+    // pr ls prorprety
     public ObjectProperty<Medecin> doctorProperty() {
         return doctor;
     }
